@@ -6,22 +6,36 @@
 
   <!-- You may add more stuff here -->
   <link href="style.css" rel="stylesheet" />
+  <script>
+    
+  </script>
 </head>
 
 <body>
-
-  <!-- You may reorganise the whole HTML, as long as your form achieves the same effect. -->
-  <form onsubmit="return !1">
-    <h5>Swap</h5>
+<div class = "total">
+<h1>currency swap</h1>
+<div class="container">
+  
+<form onsubmit="return !1">
+  <div id="segment">
     <label for="input-amount">Amount to send</label>
-    <input id="input-amount" />
-
+    <input id="input-amount" placeholder="Enter value here!"/>
+    <select class = "tokens"></select>
+  
     <label for="output-amount">Amount to receive</label>
-    <input id="output-amount" />
+    <input id="output-amount" placeholder="Output"/>
+    <select class = "tokens"></select>
+  </div>
+  
+  <!-- <img src="https://raw.githubusercontent.com/Switcheo/token-icons/main/tokens/BLUR.svg"> -->
+  <div id="segment2">
+    <button>submit</button>
+  </div>
 
-    <button>CONFIRM SWAP</button>
-  </form>
-  <script src="script.js"></script>
+</form>
+</div>
+</div>
 </body>
 
 </html>
+<script src="script.js"></script>
