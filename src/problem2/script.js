@@ -1,3 +1,4 @@
+// API access
 var cors_api_url = 'https://cors-anywhere.herokuapp.com/';
   function doCORSRequest(options, printResult) {
     var x = new XMLHttpRequest();
@@ -16,34 +17,32 @@ var cors_api_url = 'https://cors-anywhere.herokuapp.com/';
 }
 
 document.addEventListener("DOMContentLoaded", () =>{
+  fetch('https://cors-anywhere.herokuapp.com/https://interview.switcheo.com/prices.json')
+  .then(response => response.json())
+  .then(data =>{
+    console.log(data);
 
-    // document.querySelector('form').onsubmit = function() {
-      fetch('https://cors-anywhere.herokuapp.com/https://interview.switcheo.com/prices.json')
-    .then(response => response.json())
-    .then(data =>{
-      console.log(data);
+    var select = document.getElementsByClassName("tokens");
+    data.forEach(function(token) {
+      if (token.price !=0){
+          var opt = document.createElement('option');
+          opt.value = `${token.currency}`;
+          opt.innerHTML = `${token.currency}`;
 
-      var select = document.getElementsByClassName("tokens");
-      data.forEach(function(token) {
-        if (token.price !=0){
-            var opt = document.createElement('option');
-            opt.value = `${token.currency}`;
-            opt.innerHTML = `${token.currency}`;
+          var opt2 = document.createElement('option');
+          opt2.value = `${token.currency}`;
+          opt2.innerHTML = `${token.currency}`;
 
-            var opt2 = document.createElement('option');
-            opt2.value = `${token.currency}`;
-            opt2.innerHTML = `${token.currency}`;
-
-            select[0].appendChild(opt);
-            select[1].appendChild(opt2);
-        }
-      });
-
-      const price = data[0].price;
-      document.getElementById('output-amount').placeholder = 'NAHHHH';
-    })
-    // }
-    
+          select[0].appendChild(opt);
+          select[1].appendChild(opt2);
+      }
+    });
+  })
 });
 
-
+// CHANGE PLACEHOLDER WHEN THERE IS INPUT
+document.getElementById('input-amount').addEventListener('input', (event) => {
+  
+  // const price = data[0].price;
+  // document.getElementById('output-amount').placeholder = 'NAHHHH';
+});
