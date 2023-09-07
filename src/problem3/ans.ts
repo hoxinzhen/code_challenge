@@ -25,5 +25,4 @@ function getPriority(blockchain){
     5. formattedBalance can be merged with sortedBalances instead of mapping
     sortedBalances again.
 
-
 */

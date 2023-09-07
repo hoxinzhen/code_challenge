@@ -19,17 +19,28 @@
 <form onsubmit="return !1">
   <div id="segment">
     <label for="input-amount">Amount to send</label>
-    <input id="input-amount" placeholder="Enter value here!"/>
-    <select class = "tokens"></select>
+    <div class="user">
+      <input id="input-amount" class="inp" type= "number" placeholder="Enter value here!"/>
+      <img id = 'img1' src="https://raw.githubusercontent.com/Switcheo/token-icons/main/tokens/BLUR.svg">
+      <select class = "tokens" id="select1"><optgroup></optgroup></select>
+    </div>
+    
   
     <label for="output-amount">Amount to receive</label>
-    <input id="output-amount" placeholder="Output"/>
-    <select class = "tokens"></select>
+    <div class="user">
+      <input id="output-amount" class="inp" type= "number" placeholder="Output" readonly="readonly"/>
+      <img id = 'img2' src="https://raw.githubusercontent.com/Switcheo/token-icons/main/tokens/BLUR.svg">
+      <select class = "tokens" id ="select2"><optgroup></optgroup></select>
+    </div>
   </div>
   
-  <!-- <img src="https://raw.githubusercontent.com/Switcheo/token-icons/main/tokens/BLUR.svg"> -->
   <div id="segment2">
-    <button>submit</button>
+    <div id="segment3">
+      
+      <div id="lds-dual-ring"></div>
+      <p>conversion rate</p>
+    </div>
+    <button>confirm</button>
   </div>
 
 </form>
